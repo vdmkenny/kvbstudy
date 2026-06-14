@@ -21,14 +21,23 @@ const kvb1Examen: ExamenGids = {
       titel: 'Gordel, knopen en materiaal',
       items: [
         {
-          vraag: 'De drie soorten gordels en het verschil tussen initiatie- en sportklimgordels',
+          vraag: 'De drie soorten gordels',
           antwoord:
-            'Heupgordel (standaard), integraalgordel (ook rond de schouders, voor kinderen en zwangere vrouwen) en borstgordel. Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren; een sportklimgordel heeft een gecombineerd inbindpunt met beenlus, heuplus en een beweegbare zekerlus.',
+            'Heupgordel (de standaard), integraalgordel (ook rond de schouders, voor kinderen en zwangere vrouwen) en borstgordel (maakt van een heupgordel een integraalgordel).',
         },
         {
-          vraag: 'De onderdelen van een gordel en het meest slijtgevoelige deel',
+          vraag: 'Het verschil tussen een initiatie- en een sportklimgordel',
           antwoord:
-            'Heupriem, beenlussen, zekerlus, de twee inbindpunten en materiaallussen (dragen slechts circa 5 kg). Het inbindpunt, met name aan de beenlus, is het meest slijtgevoelig.',
+            'Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren. Een sportklimgordel heeft een gecombineerd inbindpunt met beenlus, heuplus en een beweegbare zekerlus.',
+        },
+        {
+          vraag: 'De onderdelen van een gordel',
+          antwoord:
+            'Heupriem, beenlussen, zekerlus, de twee inbindpunten en materiaallussen (dragen slechts circa 5 kg).',
+        },
+        {
+          vraag: 'Het meest slijtgevoelige deel van een gordel',
+          antwoord: 'Het inbindpunt, met name aan de beenlus. Dat controleer je dan ook het best.',
         },
         {
           vraag: 'Voor- en nadelen van verstelbare gordels',
@@ -41,14 +50,24 @@ const kvb1Examen: ExamenGids = {
             'Heupriem boven de heupen in de lenden en strak genoeg, beenlussen niet gedraaid of gekruist, en de heupriem niet ondersteboven of achterstevoren.',
         },
         {
-          vraag: 'Een stopknoop leggen en de twee situaties waarin je hem nodig hebt',
+          vraag: 'Een stopknoop leggen en waarvoor hij dient',
           antwoord:
-            'Dubbele overhandse knoop op het remtouw. Voorkomt dat het touweinde door het toestel schiet (1) als de zekeraar te ver achteruit stapte of (2) als de route te lang is voor het touw. Signaleert ook welk einde het zekertouw is.',
+            'Een dubbele overhandse knoop op het remtouw. Hij voorkomt dat het touweinde door het toestel schiet en signaleert welk einde het zekertouw is.',
         },
         {
-          vraag: 'Het verschil tussen statische en dynamische touwen en wat een kernmanteltouw is',
+          vraag: 'De twee situaties waarin je een stopknoop nodig hebt',
           antwoord:
-            'Statisch touw rekt niet (canyoning, speleo); dynamisch touw rekt uit en beperkt de piekbelasting (sportklimmen). Een kernmanteltouw heeft een dragende kern van verstrengelde draden met een beschermende gekleurde mantel errond.',
+            '(1) Als de zekeraar te ver achteruit stapte, en (2) als de route te lang is voor het touw bij het laten zakken.',
+        },
+        {
+          vraag: 'Het verschil tussen statische en dynamische touwen',
+          antwoord:
+            'Statisch touw rekt niet (canyoning, speleo). Dynamisch touw rekt uit en beperkt de piekbelasting bij een val (sportklimmen).',
+        },
+        {
+          vraag: 'Wat een kernmanteltouw is',
+          antwoord:
+            'Een touw met een dragende kern van verstrengelde draden, met een beschermende gekleurde mantel errond.',
         },
         {
           vraag: 'Inbinden met een acht in lus, met een safebiner en met twee schroefmusketons',
@@ -56,9 +75,14 @@ const kvb1Examen: ExamenGids = {
             'Voorgemaakte acht in lus aan de zekerlus, met een safebiner (bv. Petzl Am’D Ball-lock of DMM Belay Master) of met twee tegengesteld ingehangen schroefmusketons. Enkel voor toprope in zalen met een vast touw.',
         },
         {
-          vraag: 'Waar je op let bij achtknopen; voor- en nadelen van een voorgemaakte acht in lus',
+          vraag: 'Waar je op let bij het leggen van achtknopen',
           antwoord:
-            'Door de twee inbindpunten, parallelle strengen zonder kruisingen, gepaste lus, uiteinde volgens de vuistregel (minstens één vuist breed, maximaal twee vuisten), strak aangetrokken. Acht in lus: snel en makkelijk, maar de musketon is een extra schakel die kan openstaan of dwars belast worden.',
+            'Door de twee inbindpunten, parallelle strengen zonder kruisingen, gepaste lus, uiteinde volgens de vuistregel (minstens één vuist breed, maximaal twee vuisten), strak aangetrokken.',
+        },
+        {
+          vraag: 'Voor- en nadelen van een voorgemaakte acht in lus',
+          antwoord:
+            'Voordeel: snel en makkelijk. Nadeel: de musketon is een extra schakel die kan openstaan of dwars belast worden.',
         },
         {
           vraag: 'Het verschil tussen direct en indirect inbinden',
@@ -66,9 +90,14 @@ const kvb1Examen: ExamenGids = {
             'Direct inbinden: door de twee inbindpunten van je gordel met de geweven (dubbele) achtknoop, de standaard zonder extra schakels. Indirect inbinden: aan de zekerlus met een acht in lus en een safebiner, enkel voor toprope in zalen met een vast touw.',
         },
         {
-          vraag: 'De twee vormen van musketons en de soorten sluiting; de meest complete musketon',
+          vraag: 'De twee vormen van musketons en de soorten sluiting',
           antwoord:
-            'Vormen: recht D-vormig en peervormig HMS. Sluiting: snapper (1 handeling), schroef of twistlock (2), triple-lock (3). De HMS-safebiner is het meest compleet: je kan er een halve mastworp mee zekeren en hij sluit veilig (bv. Petzl Attache, DMM Rhino).',
+            'Vormen: recht D-vormig en peervormig HMS. Sluiting: snapper (1 handeling), schroef of twistlock (2 handelingen), triple-lock (3 handelingen).',
+        },
+        {
+          vraag: 'De meest complete musketon en waarom',
+          antwoord:
+            'De HMS-safebiner: je kan er een halve mastworp mee zekeren en hij sluit veilig (bv. Petzl Attache, DMM Rhino).',
         },
         {
           vraag: 'De info (breeksterktes in kN) op een musketon verklaren',
@@ -111,14 +140,23 @@ const kvb1Examen: ExamenGids = {
             'Bv. fout inbinden of geen partnercheck, het remtouw lossen, te ver van de wand zekeren, te dicht bij een andere klimmer klimmen, een groot gewichtsverschil, of los haar en ringen.',
         },
         {
-          vraag: 'Twee veelvoorkomende klimblessures en het nut van een goede warming-up',
+          vraag: 'Twee veelvoorkomende klimblessures',
           antwoord:
-            'Bv. ingescheurde ringbandjes (pulleys) door crimpen en schouderklachten door overontwikkelde trekspieren. Een warming-up maakt pezen elastischer en verlaagt het blessurerisico.',
+            'Bv. ingescheurde ringbandjes (pulleys) door crimpen, en schouderklachten door overontwikkelde trekspieren.',
         },
         {
-          vraag: 'Wat je doet bij een ongeval en waarom je een slachtoffer stil laat liggen',
+          vraag: 'Het nut van een goede warming-up',
+          antwoord: 'Een warming-up maakt pezen elastischer en verlaagt het blessurerisico.',
+        },
+        {
+          vraag: 'Wat je doet bij een ongeval',
           antwoord:
-            'Bel 112 (app 112 BE) en verwittig het personeel. Laat het slachtoffer stil liggen wegens mogelijke nek- of rugletsels; enkel stabiele zijlig bij braakneigingen. Reanimeer als er geen ademhaling is.',
+            'Bel 112 (app 112 BE) en verwittig het personeel. Reanimeer als er geen ademhaling is.',
+        },
+        {
+          vraag: 'Waarom je een slachtoffer stil laat liggen',
+          antwoord:
+            'Wegens mogelijke nek- of rugletsels. Enkel in stabiele zijlig leggen bij braakneigingen om stikken te vermijden.',
         },
         {
           vraag: 'Of je steeds verzekerd bent na het behalen van je KVB',
@@ -126,14 +164,23 @@ const kvb1Examen: ExamenGids = {
             'Het bezit van een KVB staat los van de verzekering. Je hebt een aparte indoor- of bergsportverzekering nodig; die laatste zit in het KBF-lidmaatschap.',
         },
         {
-          vraag: 'Twee fouten tegen de fairplay; wie voorrang heeft op de muur',
-          antwoord:
-            'Bv. een touw bezet houden of te dicht bij iemand klimmen. Wie eerst startte heeft voorrang, maar na een blok of een val verlies je die.',
+          vraag: 'Twee fouten tegen de fairplay',
+          antwoord: 'Bv. een touw bezet houden, of te dicht bij iemand klimmen.',
         },
         {
-          vraag: 'Wanneer een route correct uitgeklommen is; a vue, flash en redpoint',
+          vraag: 'Wie voorrang heeft op de muur',
           antwoord:
-            'Uitgeklommen = in een keer tot de laatste greep, zonder blokken, vallen, touwsteun, vreemde grepen of op de haken te staan. A vue = eerste poging zonder info, flash = eerste poging met info, redpoint = na meermaals proberen.',
+            'Wie eerst startte heeft voorrang, maar na een blok of een val verlies je die.',
+        },
+        {
+          vraag: 'Wanneer een route correct uitgeklommen is',
+          antwoord:
+            'In een keer tot de laatste greep, zonder blokken, vallen, touwsteun, vreemde grepen of op de haken te staan.',
+        },
+        {
+          vraag: 'A vue, flash en redpoint',
+          antwoord:
+            'A vue = eerste poging zonder info. Flash = eerste poging met info vooraf. Redpoint = uitklimmen na meermaals proberen.',
         },
         {
           vraag: 'Welke klimvaardigheidsbewijzen er bestaan',
@@ -201,9 +248,14 @@ const kvb2Examen: ExamenGids = {
             'Dicht bij de wand en onder de eerste tussenzekering. Te ver achteruit verlengt de valdiepte (grondval) en je kan hard tegen de muur knallen en het remtouw lossen. Nooit meer dan circa 1,5 a 2 m achteruit.',
         },
         {
-          vraag: 'Spotten tot aan de eerste haak en actief zekeren',
+          vraag: 'Spotten tot aan de eerste haak',
           antwoord:
-            'Spotten: bij een val voor de eerste haak het lichaam bijsturen zodat de klimmer op de voeten landt. Actief zekeren: continu afwisselen tussen uitgeven en innemen volgens wat de klimmer doet.',
+            'Bij een val voor de eerste haak het lichaam bijsturen zodat de klimmer op de voeten landt. Hou je vingers niet gespreid.',
+        },
+        {
+          vraag: 'Actief zekeren',
+          antwoord:
+            'Continu afwisselen tussen touw uitgeven en innemen volgens wat de klimmer doet.',
         },
         {
           vraag: 'Het verschil tussen statisch en dynamisch zekeren en wanneer je elk gebruikt',
@@ -320,9 +372,14 @@ const kvb3Examen: ExamenGids = {
             'Propere schoenen (zandkorrels polijsten de rots), leave no trace, magnesium en tickmarks beperken, op de paden blijven, rust houden, geen vuur, correct parkeren en de lokale topo kopen.',
         },
         {
-          vraag: 'Op welk gesteente je hier klimt; andere gesteenten en waar ze voorkomen',
+          vraag: 'Op welk gesteente je hier klimt',
           antwoord:
-            'In Belgie en de Franse sportgebieden klim je meestal op kalksteen (Freyr, Gorges du Tarn, Orpierre). Graniet vind je in de bergen (Mont Blanc-massief), zandsteen in Fontainebleau (boulderen).',
+            'In Belgie en de Franse sportgebieden klim je meestal op kalksteen (bv. Freyr, Gorges du Tarn, Orpierre).',
+        },
+        {
+          vraag: 'Welke andere gesteenten je kent en waar ze voorkomen',
+          antwoord:
+            'Graniet in de bergen (bv. het Mont Blanc-massief) en zandsteen in Fontainebleau (boulderen).',
         },
       ],
     },
@@ -330,9 +387,14 @@ const kvb3Examen: ExamenGids = {
       titel: 'Risicobewustzijn',
       items: [
         {
-          vraag: 'Vier situaties waarin je niet wil vallen, en vier andere risicovolle situaties',
+          vraag: 'Vier situaties waarin je niet wil vallen als voorklimmer',
           antwoord:
-            'Niet vallen: tijdens het inpikken (touw in de hand), met het touw achter je been, vlak bij de grond of de eerste setjes, en boven een uitsteeksel. Risicovol: groot gewichtsverschil, Z-klip, te ver achteruit zekeren, een slecht touwverloop.',
+            'Tijdens het inpikken (touw in de hand), met het touw achter je been, vlak bij de grond of de eerste setjes, en boven een uitsteeksel.',
+        },
+        {
+          vraag: 'Vier andere risicovolle situaties',
+          antwoord:
+            'Een groot gewichtsverschil, een Z-klip, te ver achteruit zekeren en een slecht touwverloop.',
         },
         {
           vraag: 'Valfactor, vangstoot en pulley-effect uitleggen',
@@ -340,9 +402,14 @@ const kvb3Examen: ExamenGids = {
             'Valfactor = de valdiepte gedeeld door de meter touw die de val opvangt. Vangstoot = de maximale kracht op het lichaam. Pulley-effect: de zekering krijgt circa vijf derde van de vangstoot (klimmer plus zekeraar, min wrijving).',
         },
         {
-          vraag: 'Vier voorbeelden van preventief gedrag en twee om blessures te vermijden',
+          vraag: 'Vier voorbeelden van preventief gedrag',
           antwoord:
-            'Preventief: partnercheck, stopknoop, dicht bij de wand zekeren, helm dragen, attent en actief zekeren. Blessures: goed opwarmen en bij een val gewoon loslaten (niet grijpen).',
+            'Partnercheck, stopknoop, dicht bij de wand zekeren, helm dragen, attent en actief zekeren.',
+        },
+        {
+          vraag: 'Twee voorbeelden om blessures te vermijden',
+          antwoord:
+            'Goed opwarmen, en bij een val gewoon loslaten (niet grijpen naar grepen of setjes).',
         },
         {
           vraag: 'Waarom en wanneer je knopen op het touweinde legt',
@@ -350,14 +417,24 @@ const kvb3Examen: ExamenGids = {
             'Een stopknoop op het touweinde voorkomt dat het door het toestel schiet bij het laten zakken of rappellen met een te kort touw (altijd bij singlepitch en bij elke rappel). Tijdens het multipitchen leg je bovendien bij het installeren van de rappel twee zaksteken (of achten) op het ene touweinde, en een halve achtknoop op het andere: zo herken je nadien welke streng je moet doortrekken om het touw te recupereren.',
         },
         {
-          vraag: 'Wat je controleert tijdens een partnercheck en waarom je in je leeflijn blijft hangen',
+          vraag: 'Wat je controleert tijdens een partnercheck',
           antwoord:
-            'Route, partner (gordel, inbindknoop, materiaal, helm), touw, zekeraar (toestel, safebiner) en stopknoop. Je blijft in je leeflijn hangen omdat statisch materiaal een dynamische schokbelasting slecht verdraagt.',
+            'Route, partner (gordel, inbindknoop, materiaal, helm), touw, zekeraar (toestel, safebiner) en de stopknoop.',
         },
         {
-          vraag: 'De opties als je niet door een route geraakt; vaste vs variabele voorklimmer',
+          vraag: 'Waarom je altijd in je leeflijn blijft hangen',
           antwoord:
-            'Opties: setje trek, op de haak staan, een voetlus, een sterkere klimmer vragen of een noodafdaling. Vaste voorklimmer: goed bij niveauverschil of schrik. Variabele: sneller en de druk wordt verdeeld.',
+            'Omdat statisch materiaal (de sling) een dynamische schokbelasting slecht verdraagt.',
+        },
+        {
+          vraag: 'De opties als je niet door een route geraakt',
+          antwoord:
+            'Setje trek, op de haak staan, een voetlus maken, een sterkere klimmer vragen, of een noodafdaling.',
+        },
+        {
+          vraag: 'Voor- en nadelen van een vaste vs variabele voorklimmer',
+          antwoord:
+            'Vaste voorklimmer: goed bij niveauverschil of schrik. Variabele: sneller (minder touwhandelingen) en de mentale druk wordt verdeeld.',
         },
       ],
     },
@@ -365,19 +442,34 @@ const kvb3Examen: ExamenGids = {
       titel: 'Materiaal en topo',
       items: [
         {
-          vraag: 'De drie soorten helmen; gevaren van een sling als leeflijn',
+          vraag: 'De drie soorten helmen',
           antwoord:
-            'Schaalhelm (hard, duurzaam, zwaar), schuimhelm (licht, na een klap weggooien) en hybride. Een sling is statisch: bij een schokbelasting (als je niet blijft hangen) kunnen hoge krachten optreden.',
+            'Schaalhelm (hard, duurzaam, zwaar), schuimhelm (licht, na een klap weggooien) en hybride (combinatie).',
         },
         {
-          vraag: 'Eigenschappen van nylon, dyneema en klimtouw; langere setjes',
+          vraag: 'De gevaren van een sling als leeflijn',
           antwoord:
-            'Nylon: dynamischer, duurzamer, slijtvaster. Dyneema: lichter en dunner maar statischer. Klimtouw: dynamisch. Langere setjes geven een rechter touwverloop en minder wrijving, maar vergroten de valdiepte.',
+            'Een sling is statisch: bij een schokbelasting (als je niet blijft hangen) kunnen hoge krachten optreden. Daarom blijf je er constant aan hangen.',
         },
         {
-          vraag: 'De drie categorieen klimtouwen; twee voordelen van een touwzak',
+          vraag: 'Eigenschappen van nylon, dyneema en klimtouw',
           antwoord:
-            'Enkeltouw (teken 1), halftouw (1/2) en tweelingtouw (oneindig-teken). Touwzak: beschermt het touw en vermijdt ongewenste knopen.',
+            'Nylon: dynamischer, duurzamer, slijtvaster. Dyneema: lichter en dunner maar statischer. Klimtouw: dynamisch.',
+        },
+        {
+          vraag: 'Voor- en nadelen van langere setjes',
+          antwoord:
+            'Voordeel: een rechter touwverloop en minder wrijving. Nadeel: ze vergroten de valdiepte.',
+        },
+        {
+          vraag: 'De drie categorieen klimtouwen',
+          antwoord:
+            'Enkeltouw (teken 1), halftouw (1/2) en tweelingtouw (oneindig-teken).',
+        },
+        {
+          vraag: 'Twee voordelen van een touwzak',
+          antwoord:
+            'Hij beschermt het touw en vermijdt ongewenste knopen (plus sneller werken en veilig met de stopknoop).',
         },
         {
           vraag: 'Slag-, expansie- en boorhaken beschrijven en vergelijken',
@@ -395,9 +487,14 @@ const kvb3Examen: ExamenGids = {
       titel: 'Handelen bij een ongeval',
       items: [
         {
-          vraag: 'Hoe je reageert bij een ongeval en wat je hiervoor meeneemt',
+          vraag: 'Hoe je reageert bij een ongeval of noodsituatie',
           antwoord:
-            'Blijf kalm, bel 112 (app 112 BE geeft je locatie) en zorg voor je eigen veiligheid. Mee: EHBO, een scherp mes, een extra zekertoestel, een overlevingsdekentje, een hoofdlamp, een opgeladen GSM en je identiteits- en lidkaart.',
+            'Blijf kalm, bel 112 (app 112 BE geeft je locatie) en zorg eerst voor je eigen veiligheid.',
+        },
+        {
+          vraag: 'Wat je meeneemt voor ongevallen of noodsituaties',
+          antwoord:
+            'EHBO, een scherp mes, een extra zekertoestel, een overlevingsdekentje, een hoofdlamp, een opgeladen GSM en je identiteits- en lidkaart.',
         },
         {
           vraag: 'Hoe je kan bijdragen aan de ongevallenregistratie van de KBF',
