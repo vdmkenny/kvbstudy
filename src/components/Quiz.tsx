@@ -3,13 +3,15 @@ import { ArrowLeftIcon, CheckIcon, XMarkIcon } from '@heroicons/react/20/solid';
 import type { LevelId, QuizQuestion } from '../types';
 import { shuffle } from '../utils';
 import { iconVoorThema } from '../themaIcon';
+import { groepVoor } from '../themas';
 import { KvbPill } from './KvbPill';
 
 type BronVraag = QuizQuestion & { bron: LevelId };
 
 interface Props {
   vragen: BronVraag[];
-  thema: string;
+  /** Gekozen themagroepen; leeg = alle. */
+  groepen: string[];
   accent: string;
   titel: string;
   /** Toon de KVB-bronpill (bij het mixen van vorige niveaus). */
@@ -17,17 +19,19 @@ interface Props {
   onTerug: () => void;
 }
 
-export function Quiz({ vragen: alle, thema, accent, titel, toonBron, onTerug }: Props) {
+export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }: Props) {
   const [ronde, setRonde] = useState(0);
+  const groepKey = groepen.join('|');
 
   const vragen = useMemo(() => {
-    const basis = thema === 'all' ? alle : alle.filter((q) => q.thema === thema);
+    const basis =
+      groepen.length === 0 ? alle : alle.filter((q) => groepen.includes(groepVoor(q.thema)));
     return shuffle(basis).map((q) => ({
       ...q,
       geshuffeldeOpties: shuffle(q.opties.map((tekst, idx) => ({ tekst, juist: idx === q.juist }))),
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [alle, thema, ronde]);
+  }, [alle, groepKey, ronde]);
 
   const [index, setIndex] = useState(0);
   const [gekozen, setGekozen] = useState<number | null>(null);

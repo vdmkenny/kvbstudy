@@ -9,7 +9,8 @@ import {
 import type { LevelContent, StudieModus } from '../types';
 import { vorigeNiveaus } from '../data';
 import { KNOPEN } from '../data/knopen';
-import { uniekeThemas } from '../utils';
+import { groepVoor, groepenIn } from '../themas';
+import { iconVoorThema } from '../themaIcon';
 import { ExamChecklist } from './ExamChecklist';
 import { Footer } from './Footer';
 
@@ -20,7 +21,7 @@ interface Props {
   tab: LevelTab;
   onTab: (tab: LevelTab) => void;
   onTerug: () => void;
-  onStart: (modus: StudieModus, thema: string, vorige: boolean) => void;
+  onStart: (modus: StudieModus, groepen: string[], vorige: boolean) => void;
   onKnoop: (id: string) => void;
 }
 
@@ -168,30 +169,35 @@ function PracticeTab({
 }: {
   level: LevelContent;
   accent: string;
-  onStart: (modus: StudieModus, thema: string, vorige: boolean) => void;
+  onStart: (modus: StudieModus, groepen: string[], vorige: boolean) => void;
 }) {
-  const [thema, setThema] = useState('all');
+  const [gekozen, setGekozen] = useState<Set<string>>(new Set());
   const [vorige, setVorige] = useState(false);
 
   const vorigeBeschikbaar = vorigeNiveaus(level.id).length > 0;
 
-  const { vragen, kaarten, themas } = useMemo(() => {
+  const { vragen, kaarten, groepen } = useMemo(() => {
     const niveaus = vorige ? [...vorigeNiveaus(level.id), level] : [level];
     const v = niveaus.flatMap((l) => l.quiz);
     const k = niveaus.flatMap((l) => l.flashcards);
-    return { vragen: v, kaarten: k, themas: uniekeThemas([...v, ...k]) };
+    return { vragen: v, kaarten: k, groepen: groepenIn([...v, ...k]) };
   }, [level, vorige]);
 
-  // Reset thema als die niet meer bestaat in de huidige set.
-  const themaGeldig = thema === 'all' || themas.includes(thema);
-  const actiefThema = themaGeldig ? thema : 'all';
+  // Enkel groepen die nog bestaan na het wisselen van 'vorige niveaus'.
+  const actief = [...gekozen].filter((g) => groepen.includes(g));
+  const past = (thema: string) => actief.length === 0 || actief.includes(groepVoor(thema));
 
-  const quizCount =
-    actiefThema === 'all' ? vragen.length : vragen.filter((q) => q.thema === actiefThema).length;
-  const kaartCount =
-    actiefThema === 'all'
-      ? kaarten.length
-      : kaarten.filter((f) => f.thema === actiefThema).length;
+  const quizCount = vragen.filter((q) => past(q.thema)).length;
+  const kaartCount = kaarten.filter((f) => past(f.thema)).length;
+
+  function toggleGroep(g: string) {
+    setGekozen((prev) => {
+      const next = new Set(prev);
+      if (next.has(g)) next.delete(g);
+      else next.add(g);
+      return next;
+    });
+  }
 
   return (
     <div className="flex flex-col gap-5 px-5 py-5">
@@ -208,7 +214,7 @@ function PracticeTab({
             checked={vorige}
             onChange={(e) => {
               setVorige(e.target.checked);
-              setThema('all');
+              setGekozen(new Set());
             }}
             className="h-6 w-6 shrink-0 rounded"
             style={{ accentColor: accent }}
@@ -217,30 +223,53 @@ function PracticeTab({
       )}
 
       <div>
-        <label htmlFor="thema" className="mb-2 block text-sm font-medium text-bark-700">
-          Thema
-        </label>
-        <select
-          id="thema"
-          value={actiefThema}
-          onChange={(e) => setThema(e.target.value)}
-          className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-bark-800 focus:outline-none"
-          style={{ outlineColor: accent }}
-        >
-          <option value="all">Alle thema&apos;s</option>
-          {themas.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
+        <div className="mb-2 flex items-center justify-between">
+          <span className="text-sm font-medium text-bark-700">Thema&apos;s</span>
+          {actief.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setGekozen(new Set())}
+              className="text-xs font-medium text-bark-500 underline"
+            >
+              Alles wissen
+            </button>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Thema's kiezen">
+          {groepen.map((g) => {
+            const sel = actief.includes(g);
+            const Icoon = iconVoorThema(g);
+            return (
+              <button
+                key={g}
+                type="button"
+                onClick={() => toggleGroep(g)}
+                aria-pressed={sel}
+                className="flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition active:scale-95"
+                style={
+                  sel
+                    ? { backgroundColor: accent, borderColor: accent, color: '#fff' }
+                    : { borderColor: 'var(--color-sand-300)', color: 'var(--color-bark-700)' }
+                }
+              >
+                <Icoon className="h-3.5 w-3.5" aria-hidden="true" />
+                {g}
+              </button>
+            );
+          })}
+        </div>
+        <p className="mt-2 text-xs text-bark-500">
+          {actief.length === 0
+            ? 'Alle thema’s'
+            : `${actief.length} thema${actief.length === 1 ? '' : '’s'} gekozen`}
+        </p>
       </div>
 
       <div className="flex flex-col gap-3">
         <button
           type="button"
           disabled={quizCount === 0}
-          onClick={() => onStart('quiz', actiefThema, vorige)}
+          onClick={() => onStart('quiz', actief, vorige)}
           className="flex items-center gap-4 rounded-2xl p-5 text-left text-white shadow-sm transition active:scale-[0.99] disabled:opacity-50"
           style={{ backgroundColor: accent }}
         >
@@ -256,7 +285,7 @@ function PracticeTab({
         <button
           type="button"
           disabled={kaartCount === 0}
-          onClick={() => onStart('flashcards', actiefThema, vorige)}
+          onClick={() => onStart('flashcards', actief, vorige)}
           className="flex items-center gap-4 rounded-2xl border-2 bg-white p-5 text-left shadow-sm transition active:scale-[0.99] disabled:opacity-50"
           style={{ borderColor: accent, color: accent }}
         >

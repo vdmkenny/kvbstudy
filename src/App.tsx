@@ -14,7 +14,7 @@ type LevelTab = 'info' | 'examen' | 'oefenen';
 type View =
   | { naam: 'home' }
   | { naam: 'niveau'; id: LevelId; tab: LevelTab }
-  | { naam: 'oefenen'; id: LevelId; modus: StudieModus; thema: string; vorige: boolean }
+  | { naam: 'oefenen'; id: LevelId; modus: StudieModus; groepen: string[]; vorige: boolean }
   | { naam: 'knopen'; openId?: string }
   | { naam: 'woordenlijst' }
   | { naam: 'materiaal' };
@@ -88,8 +88,8 @@ export default function App() {
           tab={view.tab}
           onTab={(tab) => setView({ naam: 'niveau', id: view.id, tab })}
           onTerug={() => setView({ naam: 'home' })}
-          onStart={(modus, thema, vorige) =>
-            setView({ naam: 'oefenen', id: view.id, modus, thema, vorige })
+          onStart={(modus, groepen, vorige) =>
+            setView({ naam: 'oefenen', id: view.id, modus, groepen, vorige })
           }
           onKnoop={(openId) => setView({ naam: 'knopen', openId })}
         />
@@ -98,7 +98,7 @@ export default function App() {
       {view.naam === 'oefenen' && level && oefenData && view.modus === 'quiz' && (
         <Quiz
           vragen={oefenData.vragen}
-          thema={view.thema}
+          groepen={view.groepen ?? []}
           accent={level.accent ?? '#9a4f31'}
           titel={level.naam}
           toonBron={view.vorige}
@@ -109,7 +109,7 @@ export default function App() {
       {view.naam === 'oefenen' && level && oefenData && view.modus === 'flashcards' && (
         <Flashcards
           kaarten={oefenData.kaarten}
-          thema={view.thema}
+          groepen={view.groepen ?? []}
           accent={level.accent ?? '#9a4f31'}
           titel={level.naam}
           onTerug={() => setView({ naam: 'niveau', id: view.id, tab: 'oefenen' })}

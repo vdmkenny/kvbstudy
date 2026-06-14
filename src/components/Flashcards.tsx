@@ -8,23 +8,27 @@ import {
 import type { Flashcard } from '../types';
 import { shuffle } from '../utils';
 import { iconVoorThema } from '../themaIcon';
+import { groepVoor } from '../themas';
 
 interface Props {
   kaarten: Flashcard[];
-  thema: string;
+  /** Gekozen themagroepen; leeg = alle. */
+  groepen: string[];
   accent: string;
   titel: string;
   onTerug: () => void;
 }
 
-export function Flashcards({ kaarten: alle, thema, accent, titel, onTerug }: Props) {
+export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: Props) {
   const [ronde, setRonde] = useState(0);
+  const groepKey = groepen.join('|');
 
   const kaarten = useMemo(() => {
-    const basis = thema === 'all' ? alle : alle.filter((f) => f.thema === thema);
+    const basis =
+      groepen.length === 0 ? alle : alle.filter((f) => groepen.includes(groepVoor(f.thema)));
     return shuffle(basis);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [alle, thema, ronde]);
+  }, [alle, groepKey, ronde]);
 
   const [index, setIndex] = useState(0);
   const [omgedraaid, setOmgedraaid] = useState(false);
