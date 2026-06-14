@@ -55,6 +55,11 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // Scroll naar boven bij elke schermwissel (een SPA onthoudt anders de scrollpositie).
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, [view]);
+
   const level = 'id' in view ? getLevel(view.id) : undefined;
 
   const oefenData = useMemo(() => {
