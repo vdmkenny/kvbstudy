@@ -7,6 +7,7 @@ import {
 import { KNOPEN } from '../data/knopen';
 import { iconVoorThema } from '../themaIcon';
 import { KvbPill } from './KvbPill';
+import { KnotDiagram } from './KnotDiagram';
 
 interface Props {
   openId?: string;
@@ -97,6 +98,10 @@ export function KnotGuide({ openId, onTerug }: Props) {
                         className="border-t border-sand-200 px-4 pb-4 pt-3"
                       >
                         <p className="text-sm leading-relaxed text-bark-700">{knoop.waarvoor}</p>
+
+                        <div className="mt-3">
+                          <KnotDiagram id={knoop.id} naam={knoop.naam} />
+                        </div>
 
                         <ol className="mt-3 flex flex-col gap-2">
                           {knoop.stappen.map((stap, i) => (
