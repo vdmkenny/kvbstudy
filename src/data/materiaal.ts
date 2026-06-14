@@ -173,7 +173,7 @@ export const MATERIAAL: MateriaalItem[] = [
     categorie: 'Zekertoestellen',
     beschrijving:
       'Klemt het touw volledig vast: niet meer remhandkracht- of positie-afhankelijk. In theorie het veiligst, mits correct gebruik. Sommige hebben een paniekfunctie. Laat ook hier je remtouw nooit los.',
-    voorbeelden: ['Petzl Grigri', 'Petzl Grigri+', 'Edelrid Eddy'],
+    voorbeelden: ['Petzl Grigri', 'Petzl Grigri+', 'Edelrid Pinch'],
     kvb: 'kvb1',
   },
   {
