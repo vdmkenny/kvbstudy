@@ -40,6 +40,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'D-musketon',
     synoniemen: ['D-vormige musketon', 'mousqueton en D'],
     categorie: 'Musketons',
+    subcategorie: 'Vormen',
     beschrijving:
       'Klassieke rechte musketon met twee bijna evenwijdige zijden en relatief scherpe binnenhoeken. De belasting komt op de sterke rechte kant. Niet in alle rotssituaties even handig.',
     voorbeelden: ['Petzl Spirit', 'Black Diamond Positron', 'DMM Spectre'],
@@ -50,6 +51,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'Ovale musketon',
     synoniemen: ['ovaalmusketon', 'mousqueton ovale'],
     categorie: 'Musketons',
+    subcategorie: 'Vormen',
     beschrijving:
       'De ovale vorm houdt de last gecentreerd en verdeelt ze gelijk over de twee zijden van de musketon (de rug en de poort), waardoor dwarsbelasting (kruisbelasting) vermeden wordt. Ovale musketons geven minder touwweerstand en voorkomen verschuiven. Doorgaans niet gebruikt bij sportklimmen.',
     voorbeelden: ['Petzl OK', 'Black Diamond Oval', 'DMM Ultra O'],
@@ -59,6 +61,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'HMS-musketon',
     synoniemen: ['peervormige musketon', 'mousqueton HMS', 'mousqueton poire'],
     categorie: 'Musketons',
+    subcategorie: 'Vormen',
     beschrijving:
       'Peervormige musketon (Halbe Mastwurf Sicherung). De brede kant met minder scherpe hoek laat toe om met een halve mastworp te zekeren. Gemarkeerd met een H in een cirkel.',
     voorbeelden: ['Petzl Attache', 'Black Diamond RockLock', 'Edelrid HMS Strike'],
@@ -70,6 +73,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'Snapper',
     synoniemen: ['karabijn', 'musketon', 'mousqueton'],
     categorie: 'Musketons',
+    subcategorie: 'Sluitingen',
     beschrijving:
       'Sluiting die met één handeling opengaat en niet te beveiligen is. Voor setjes of om materiaal aan de gordel te hangen. Keylock-afwerking voorkomt haken.',
     voorbeelden: ['Petzl Spirit', 'Black Diamond HotForge', 'Simond'],
@@ -80,6 +84,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'Schroefmusketon',
     synoniemen: ['mousqueton à vis'],
     categorie: 'Musketons',
+    subcategorie: 'Sluitingen',
     beschrijving:
       'Beveiligde musketon met twee handelingen, die je manueel dichtschroeft. Twee tegengesteld ingehangen schroefmusketons mogen om in te binden met een acht in lus.',
     voorbeelden: ['Petzl Sm’D', 'Black Diamond RockLock', 'Edelrid Pure Screw'],
@@ -90,6 +95,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'Twistlock-musketon',
     synoniemen: ['dual-lock musketon'],
     categorie: 'Musketons',
+    subcategorie: 'Sluitingen',
     beschrijving:
       'Beveiligde musketon die met twee handelingen automatisch sluit. Wordt bij het klimmen beter niet gebruikt: er zijn veiligere opties (een safebiner).',
     voorbeelden: ['Petzl Sm’D Twist-Lock', 'Edelrid Pure Twist'],
@@ -100,6 +106,7 @@ export const MATERIAAL: MateriaalItem[] = [
     naam: 'Safebiner',
     synoniemen: ['triple-lock musketon'],
     categorie: 'Musketons',
+    subcategorie: 'Sluitingen',
     beschrijving:
       'Een extra beveiligde musketon die met drie handelingen opent (triple-lock), zodat de kans op ongewild opengaan extreem klein is. Enkel de Ball-lock en de Belay Master worden aanvaard als echte safebiner om mee te zekeren en indirect in te binden.',
     voorbeelden: ['Petzl Am’D Ball-lock', 'Petzl Sm’D Ball-lock', 'DMM Belay Master'],

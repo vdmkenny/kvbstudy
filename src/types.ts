@@ -112,6 +112,8 @@ export interface MateriaalItem {
   naam: string;
   synoniemen?: string[];
   categorie: string;
+  /** Optionele subgroep binnen een categorie (bv. 'Vormen' / 'Sluitingen'). */
+  subcategorie?: string;
   beschrijving: string;
   /** Echte productvoorbeelden. */
   voorbeelden?: string[];
