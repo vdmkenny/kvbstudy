@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.extracted
+.claude
+
+# Bron-PDF's blijven lokaal, niet in de build
+*.pdf
+
+# TypeScript incremental build cache
+*.tsbuildinfo

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KVB Studie">
+  <!-- volledige veilige zone gevuld voor maskable -->
+  <rect width="512" height="512" fill="#0b1120" />
+  <path d="M140 356 L226 212 L274 276 L316 220 L388 356 Z" fill="#0f766e" />
+  <path d="M226 212 L256 254 L238 266 L212 242 Z" fill="#5eead4" />
+  <path d="M316 220 L344 262 L326 272 L302 248 Z" fill="#5eead4" />
+  <path d="M156 372 q72 -36 144 0 q72 36 78 -6" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" />
+  <text x="256" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#f8fafc" text-anchor="middle">KVB</text>
+</svg>

@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Crimson Text', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Lichte, aardse kleuren */
+  --color-parchment: #f4eee1;
+  --color-sand-100: #efe6d4;
+  --color-sand-200: #e7dabf;
+  --color-sand-300: #d8c6a6;
+  --color-clay-500: #b35f3c;
+  --color-clay-600: #9a4f31;
+  --color-moss-500: #6f7a4a;
+  --color-moss-600: #586237;
+  --color-bark-500: #8a7d6a;
+  --color-bark-600: #6c6253;
+  --color-bark-700: #534a3d;
+  --color-bark-800: #3a332a;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-parchment);
+    color: var(--color-bark-800);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    /* veilige zone voor notch / home-indicator */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  /* prettiger tikken op mobiel */
+  button,
+  a,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* Fancy titel */
+.app-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  background-image: linear-gradient(135deg, var(--color-clay-500) 0%, var(--color-bark-800) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Subtiele, korte animaties */
+@keyframes kvb-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in {
+  animation: kvb-fade-in 0.22s ease-out both;
+}
+
+@keyframes kvb-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.result-pop {
+  animation: kvb-pop 0.3s ease-out both;
+}
+
+/* Korte tik-feedback */
+.press {
+  transition: transform 0.08s ease;
+}
+
+.press:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .result-pop,
+  .flip-inner,
+  .press {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Flip-animatie voor flashcards */
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
