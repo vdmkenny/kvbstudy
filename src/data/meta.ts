@@ -347,7 +347,7 @@ const kvb3Examen: ExamenGids = {
         {
           vraag: 'Waarom en wanneer je knopen op het touweinde legt',
           antwoord:
-            'Een stopknoop op het touweinde voorkomt dat het door het toestel schiet bij het laten zakken of rappellen met een te kort touw. Altijd bij singlepitch en bij elke rappel.',
+            'Een stopknoop op het touweinde voorkomt dat het door het toestel schiet bij het laten zakken of rappellen met een te kort touw (altijd bij singlepitch en bij elke rappel). Tijdens het multipitchen leg je bovendien bij het installeren van de rappel twee zaksteken (of achten) op het ene touweinde, en een halve achtknoop op het andere: zo herken je nadien welke streng je moet doortrekken om het touw te recupereren.',
         },
         {
           vraag: 'Wat je controleert tijdens een partnercheck en waarom je in je leeflijn blijft hangen',
