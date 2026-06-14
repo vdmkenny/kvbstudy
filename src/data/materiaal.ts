@@ -34,25 +34,25 @@ export const MATERIAAL: MateriaalItem[] = [
   },
 
   // Musketons
+  // Op basis van de vorm
   {
-    id: 'snapper',
-    naam: 'Snapper',
-    synoniemen: ['karabijn', 'musketon', 'mousqueton'],
+    id: 'd-musketon',
+    naam: 'D-musketon',
+    synoniemen: ['D-vormige musketon', 'mousqueton en D'],
     categorie: 'Musketons',
     beschrijving:
-      'Musketon met een sluiting die met een handeling opengaat en niet te beveiligen is. Voor setjes of om materiaal aan de gordel te hangen. Keylock-afwerking voorkomt haken.',
-    voorbeelden: ['Petzl Spirit', 'Black Diamond HotForge', 'Simond'],
-    kvb: 'kvb2',
+      'Klassieke rechte musketon met twee bijna evenwijdige zijden en relatief scherpe binnenhoeken. De belasting komt op de sterke rechte kant. Niet in alle rotssituaties even handig.',
+    voorbeelden: ['Petzl Spirit', 'Black Diamond Positron', 'DMM Spectre'],
+    kvb: 'kvb1',
   },
   {
-    id: 'schroefmusketon',
-    naam: 'Schroefmusketon',
-    synoniemen: ['mousqueton à vis'],
+    id: 'ovale-musketon',
+    naam: 'Ovale musketon',
+    synoniemen: ['ovaalmusketon', 'mousqueton ovale'],
     categorie: 'Musketons',
     beschrijving:
-      'Beveiligde musketon die je manueel dichtschroeft. Twee tegengesteld ingehangen schroefmusketons mogen om in te binden met een acht in lus.',
-    voorbeelden: ['Petzl Sm’D', 'Black Diamond RockLock', 'Edelrid Pure Screw'],
-    kvb: 'kvb1',
+      'De ovale vorm houdt de last gecentreerd en verdeelt ze gelijk over de twee zijden van de musketon (de rug en de poort), waardoor dwarsbelasting (kruisbelasting) vermeden wordt. Ovale musketons geven minder touwweerstand en voorkomen verschuiven. Doorgaans niet gebruikt bij sportklimmen.',
+    voorbeelden: ['Petzl OK', 'Black Diamond Oval', 'DMM Ultra O'],
   },
   {
     id: 'hms-musketon',
@@ -62,6 +62,37 @@ export const MATERIAAL: MateriaalItem[] = [
     beschrijving:
       'Peervormige musketon (Halbe Mastwurf Sicherung). De brede kant met minder scherpe hoek laat toe om met een halve mastworp te zekeren. Gemarkeerd met een H in een cirkel.',
     voorbeelden: ['Petzl Attache', 'Black Diamond RockLock', 'Edelrid HMS Strike'],
+    kvb: 'kvb1',
+  },
+  // Op basis van de sluiting
+  {
+    id: 'snapper',
+    naam: 'Snapper',
+    synoniemen: ['karabijn', 'musketon', 'mousqueton'],
+    categorie: 'Musketons',
+    beschrijving:
+      'Sluiting die met één handeling opengaat en niet te beveiligen is. Voor setjes of om materiaal aan de gordel te hangen. Keylock-afwerking voorkomt haken.',
+    voorbeelden: ['Petzl Spirit', 'Black Diamond HotForge', 'Simond'],
+    kvb: 'kvb2',
+  },
+  {
+    id: 'schroefmusketon',
+    naam: 'Schroefmusketon',
+    synoniemen: ['mousqueton à vis'],
+    categorie: 'Musketons',
+    beschrijving:
+      'Beveiligde musketon met twee handelingen, die je manueel dichtschroeft. Twee tegengesteld ingehangen schroefmusketons mogen om in te binden met een acht in lus.',
+    voorbeelden: ['Petzl Sm’D', 'Black Diamond RockLock', 'Edelrid Pure Screw'],
+    kvb: 'kvb1',
+  },
+  {
+    id: 'twistlock',
+    naam: 'Twistlock-musketon',
+    synoniemen: ['dual-lock musketon'],
+    categorie: 'Musketons',
+    beschrijving:
+      'Beveiligde musketon die met twee handelingen automatisch sluit. Wordt bij het klimmen beter niet gebruikt: er zijn veiligere opties (een safebiner).',
+    voorbeelden: ['Petzl Sm’D Twist-Lock', 'Edelrid Pure Twist'],
     kvb: 'kvb1',
   },
   {
