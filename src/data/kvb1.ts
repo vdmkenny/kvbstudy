@@ -109,14 +109,14 @@ export const kvb1: LevelContent = {
       thema: 'Gordels',
       vraag: 'Welk onderdeel van de gordel is het meest gevoelig voor slijtage en moet je controleren?',
       opties: [
-        'Het inbindpunt, vooral de beenlus',
+        'Het inbindpunt, vooral de onderste inbindlus',
         'De materiaallussen',
         'De heupriem-gesp',
         'De zitkussens',
       ],
       juist: 0,
       uitleg:
-        'De slijtvastheid van het inbindpunt bepaalt de levensduur; het is vooral de beenlus die gecontroleerd moet worden. Een plastic bescherming verlengt de levensduur.',
+        'De slijtvastheid van het inbindpunt bepaalt de levensduur; het is vooral de onderste inbindlus die gecontroleerd moet worden. Een plastic bescherming verlengt de levensduur.',
     },
     {
       id: 'k1-q9',
@@ -535,7 +535,7 @@ export const kvb1: LevelContent = {
       thema: 'Gordels',
       voorkant: 'Slijtage van de gordel',
       achterkant:
-        'Het inbindpunt, vooral de beenlus, is het meest gevoelig voor slijtage. Materiaallussen dragen slechts ± 5 kg, niet om in te zekeren of inbinden!',
+        'Het inbindpunt, vooral de onderste inbindlus, is het meest gevoelig voor slijtage. Materiaallussen dragen slechts ± 5 kg, niet om in te zekeren of inbinden!',
     },
     {
       id: 'k1-f8',

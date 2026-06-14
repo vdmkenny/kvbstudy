@@ -37,7 +37,8 @@ const kvb1Examen: ExamenGids = {
         },
         {
           vraag: 'Het meest slijtgevoelige deel van een gordel',
-          antwoord: 'Het inbindpunt, met name aan de beenlus. Dat controleer je dan ook het best.',
+          antwoord:
+            'Het inbindpunt, met name de onderste inbindlus (waar vaak een plastic bescherming over zit). Dat controleer je dan ook het best.',
         },
         {
           vraag: 'Voor- en nadelen van verstelbare gordels',
