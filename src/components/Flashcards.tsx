@@ -74,25 +74,31 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
       <button
         type="button"
         onClick={() => setOmgedraaid((v) => !v)}
+        aria-pressed={omgedraaid}
         className="flip-card relative flex-1"
-        aria-label="Draai de kaart om"
       >
         <div className={`flip-inner absolute inset-0 ${omgedraaid ? 'is-flipped' : ''}`}>
           {/* Voorkant */}
-          <div className="flip-face absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-sand-300 bg-white p-6 text-center shadow-sm">
+          <div
+            aria-hidden={omgedraaid}
+            className="flip-face absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-sand-300 bg-white p-6 text-center shadow-sm"
+          >
             <span
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"
               style={{ backgroundColor: 'var(--color-sand-100)', color: accent }}
             >
-              <ThemaIcon className="h-3.5 w-3.5" />
+              <ThemaIcon className="h-3.5 w-3.5" aria-hidden="true" />
               {kaart.thema}
             </span>
             <p className="font-serif text-2xl leading-snug text-bark-800">{kaart.voorkant}</p>
-            <span className="absolute bottom-5 text-xs text-bark-500">Tik om om te draaien</span>
+            <span className="absolute bottom-5 text-xs text-bark-500" aria-hidden="true">
+              Tik om om te draaien
+            </span>
           </div>
 
           {/* Achterkant */}
           <div
+            aria-hidden={!omgedraaid}
             className="flip-face flip-back absolute inset-0 flex flex-col items-center justify-center gap-3 overflow-y-auto rounded-3xl border-2 p-6 text-center shadow-sm"
             style={{ borderColor: accent, backgroundColor: 'var(--color-sand-100)' }}
           >
@@ -100,7 +106,7 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium text-white"
               style={{ backgroundColor: accent }}
             >
-              <ThemaIcon className="h-3.5 w-3.5" />
+              <ThemaIcon className="h-3.5 w-3.5" aria-hidden="true" />
               {kaart.thema}
             </span>
             <p className="text-base leading-relaxed text-bark-800">{kaart.achterkant}</p>

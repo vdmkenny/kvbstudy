@@ -154,5 +154,5 @@ export function KnotGuide({ openId, onTerug }: Props) {
 
 function CategorieIcoon({ cat }: { cat: string }) {
   const Icoon = iconVoorThema(cat);
-  return <Icoon className="h-4 w-4" />;
+  return <Icoon className="h-4 w-4" aria-hidden="true" />;
 }

@@ -78,7 +78,11 @@ export function ExamChecklist({ examen, accent, levelId, geenExamen }: Props) {
     <div className="flex flex-col gap-5 px-5 py-5">
       {geenExamen && (
         <p className="flex items-start gap-2 rounded-2xl border border-sand-300 bg-sand-100 p-4 text-sm leading-relaxed text-bark-700">
-          <InformationCircleIcon className="mt-0.5 h-5 w-5 shrink-0" style={{ color: accent }} />
+          <InformationCircleIcon
+            className="mt-0.5 h-5 w-5 shrink-0"
+            style={{ color: accent }}
+            aria-hidden="true"
+          />
           <span>
             Voor dit niveau is er geen examen, enkel cursus en stages. Onderstaande punten zijn een
             oefengids.
@@ -93,7 +97,14 @@ export function ExamChecklist({ examen, accent, levelId, geenExamen }: Props) {
       )}
 
       <div className="flex items-center gap-3">
-        <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-sand-200">
+        <div
+          className="h-2.5 flex-1 overflow-hidden rounded-full bg-sand-200"
+          role="progressbar"
+          aria-label="Afgevinkte punten"
+          aria-valuemin={0}
+          aria-valuemax={totaal}
+          aria-valuenow={klaar}
+        >
           <div
             className="h-full rounded-full transition-all"
             style={{ width: `${pct}%`, backgroundColor: accent }}
@@ -110,7 +121,7 @@ export function ExamChecklist({ examen, accent, levelId, geenExamen }: Props) {
           className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide"
           style={{ color: accent }}
         >
-          <AcademicCapIcon className="h-4 w-4" />
+          <AcademicCapIcon className="h-4 w-4" aria-hidden="true" />
           Theorie
         </h2>
         {examen.theorie.map((groep) => (
@@ -132,7 +143,7 @@ export function ExamChecklist({ examen, accent, levelId, geenExamen }: Props) {
           className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide"
           style={{ color: accent }}
         >
-          <WrenchScrewdriverIcon className="h-4 w-4" />
+          <WrenchScrewdriverIcon className="h-4 w-4" aria-hidden="true" />
           Praktijk
         </h2>
         {examen.praktijk.map((groep) => (
@@ -153,7 +164,7 @@ function GroepKop({ titel }: { titel: string }) {
   const Icoon = iconVoorThema(titel);
   return (
     <div className="flex items-center gap-2 border-b border-sand-200 px-4 py-2.5 text-sm font-semibold text-bark-800">
-      <Icoon className="h-4 w-4 text-bark-500" />
+      <Icoon className="h-4 w-4 text-bark-500" aria-hidden="true" />
       {titel}
     </div>
   );
@@ -189,6 +200,7 @@ function TheorieKaart({
                   type="checkbox"
                   checked={checked}
                   onChange={() => onToggle(key)}
+                  aria-label={item.vraag}
                   className="mt-0.5 h-5 w-5 shrink-0 rounded"
                   style={{ accentColor: accent }}
                 />
@@ -202,7 +214,10 @@ function TheorieKaart({
                     {item.vraag}
                   </span>
                   {open && item.antwoord && (
-                    <p className="mt-2 rounded-lg bg-sand-100 p-3 text-sm leading-relaxed text-bark-700">
+                    <p
+                      id={`antw-${key}`}
+                      className="mt-2 rounded-lg bg-sand-100 p-3 text-sm leading-relaxed text-bark-700"
+                    >
                       {item.antwoord}
                     </p>
                   )}
@@ -211,12 +226,13 @@ function TheorieKaart({
                   <button
                     type="button"
                     onClick={() => onOnthul(key)}
-                    aria-label={open ? 'Verberg antwoord' : 'Toon antwoord'}
+                    aria-label={open ? `Verberg antwoord op: ${item.vraag}` : `Toon antwoord op: ${item.vraag}`}
                     aria-expanded={open}
+                    aria-controls={open ? `antw-${key}` : undefined}
                     className="shrink-0 active:scale-90"
                     style={{ color: open ? accent : 'var(--color-bark-500)' }}
                   >
-                    <QuestionMarkCircleIcon className="h-6 w-6" />
+                    <QuestionMarkCircleIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 )}
               </div>

@@ -65,7 +65,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
               {level.afbeelding && (
                 <img
                   src={level.afbeelding}
-                  alt={`Kaart ${level.naam}`}
+                  alt=""
                   className="my-2 h-20 w-[57px] shrink-0 rounded-md object-cover"
                   loading="lazy"
                 />
@@ -73,7 +73,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
               <div className="flex min-w-0 flex-1 flex-col justify-center py-3 pr-2">
                 <div className="flex items-center gap-2">
                   <span className="font-serif text-lg font-bold text-bark-800">{level.naam}</span>
-                  {disabled && <LockClosedIcon className="h-4 w-4 text-bark-500" />}
+                  {disabled && <LockClosedIcon className="h-4 w-4 text-bark-500" aria-hidden="true" />}
                 </div>
                 <p className="truncate text-sm text-bark-600">{level.ondertitel}</p>
                 {!disabled ? (
@@ -85,7 +85,10 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
                 )}
               </div>
               {!disabled && (
-                <ChevronRightIcon className="my-auto mr-3 h-5 w-5 shrink-0 text-bark-500" />
+                <ChevronRightIcon
+                  className="my-auto mr-3 h-5 w-5 shrink-0 text-bark-500"
+                  aria-hidden="true"
+                />
               )}
             </button>
           );
@@ -106,13 +109,13 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
               style={{ backgroundColor: 'var(--color-clay-500)' }}
             >
-              <LinkIcon className="h-6 w-6" />
+              <LinkIcon className="h-6 w-6" aria-hidden="true" />
             </span>
             <div className="flex-1">
               <div className="font-semibold text-bark-800">Knopengids</div>
               <div className="text-sm text-bark-600">Achtknoop, mastworp, alpiene slipsteek...</div>
             </div>
-            <ChevronRightIcon className="h-5 w-5 text-bark-500" />
+            <ChevronRightIcon className="h-5 w-5 text-bark-500" aria-hidden="true" />
           </button>
 
           <button
@@ -124,7 +127,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
               style={{ backgroundColor: 'var(--color-moss-500)' }}
             >
-              <BookOpenIcon className="h-6 w-6" />
+              <BookOpenIcon className="h-6 w-6" aria-hidden="true" />
             </span>
             <div className="flex-1">
               <div className="font-semibold text-bark-800">Woordenlijst</div>

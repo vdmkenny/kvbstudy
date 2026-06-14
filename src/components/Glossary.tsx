@@ -43,13 +43,14 @@ export function Glossary({ onTerug }: Props) {
 
       <div className="px-5 pb-4">
         <div className="flex items-center gap-2 rounded-xl border border-sand-300 bg-white px-3 py-2.5">
-          <MagnifyingGlassIcon className="h-5 w-5 shrink-0 text-bark-500" />
+          <MagnifyingGlassIcon className="h-5 w-5 shrink-0 text-bark-500" aria-hidden="true" />
           <input
             type="search"
             inputMode="search"
             value={zoek}
             onChange={(e) => setZoek(e.target.value)}
             placeholder="Zoek een term of woord..."
+            aria-label="Zoek in de woordenlijst"
             className="w-full bg-transparent text-bark-800 placeholder:text-bark-500 focus:outline-none"
           />
         </div>
@@ -85,5 +86,5 @@ export function Glossary({ onTerug }: Props) {
 
 function CategorieIcoon({ cat }: { cat: string }) {
   const Icoon = iconVoorThema(cat);
-  return <Icoon className="h-4 w-4" />;
+  return <Icoon className="h-4 w-4" aria-hidden="true" />;
 }

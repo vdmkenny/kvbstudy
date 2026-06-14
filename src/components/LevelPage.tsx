@@ -44,15 +44,15 @@ export function LevelPage({ level, tab, onTab, onTerug, onStart, onKnoop }: Prop
           <button
             type="button"
             onClick={onTerug}
-            aria-label="Terug"
+            aria-label="Terug naar startscherm"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
           >
-            <ArrowLeftIcon className="h-5 w-5" />
+            <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
           </button>
           {level.afbeelding && (
             <img
               src={level.afbeelding}
-              alt={`Kaart ${level.naam}`}
+              alt=""
               className="h-14 w-10 rounded-md object-cover"
               loading="lazy"
             />
@@ -77,7 +77,9 @@ export function LevelPage({ level, tab, onTab, onTerug, onStart, onKnoop }: Prop
               key={t.id}
               type="button"
               role="tab"
+              id={`tab-${t.id}`}
               aria-selected={actief}
+              aria-controls="kvb-tabpanel"
               onClick={() => onTab(t.id)}
               className="flex-1 px-2 py-3 text-sm font-semibold transition"
               style={
@@ -92,7 +94,12 @@ export function LevelPage({ level, tab, onTab, onTerug, onStart, onKnoop }: Prop
         })}
       </div>
 
-      <div className="flex-1">
+      <div
+        className="flex-1"
+        id="kvb-tabpanel"
+        role="tabpanel"
+        aria-labelledby={`tab-${actieveTab}`}
+      >
         {actieveTab === 'info' && <InfoTab level={level} accent={accent} onKnoop={onKnoop} />}
         {actieveTab === 'examen' && (
           <ExamChecklist
@@ -133,7 +140,7 @@ function InfoTab({
       {knopen.length > 0 && (
         <section>
           <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-bark-500">
-            <LinkIcon className="h-4 w-4" />
+            <LinkIcon className="h-4 w-4" aria-hidden="true" />
             Knopen voor dit niveau
           </h2>
           <div className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70">
@@ -150,9 +157,10 @@ function InfoTab({
                 <span
                   className="h-2 w-2 shrink-0 rounded-full"
                   style={{ backgroundColor: accent }}
+                  aria-hidden="true"
                 />
                 <span className="flex-1 text-[15px] text-bark-800">{k.naam}</span>
-                <ChevronRightIcon className="h-4 w-4 text-bark-500" />
+                <ChevronRightIcon className="h-4 w-4 text-bark-500" aria-hidden="true" />
               </button>
             ))}
           </div>
