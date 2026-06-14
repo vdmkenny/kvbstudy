@@ -28,7 +28,7 @@ const kvb1Examen: ExamenGids = {
         {
           vraag: 'Het verschil tussen een initiatie- en een sportklimgordel',
           antwoord:
-            'Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren. Een sportklimgordel heeft een gecombineerd inbindpunt met beenlus, heuplus en een beweegbare zekerlus.',
+            'Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren. Een sportklimgordel heeft een gecombineerd inbindpunt met twee inbindlussen (onder en boven) verbonden door een beweegbare zekerlus.',
         },
         {
           vraag: 'De onderdelen van een gordel',

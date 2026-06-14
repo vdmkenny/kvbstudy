@@ -95,14 +95,14 @@ export const kvb1: LevelContent = {
       thema: 'Gordels',
       vraag: 'Wat is het verschil tussen een initiatiegordel en een sportklimgordel?',
       opties: [
-        'Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren; een sportklimgordel heeft een beenlus, heuplus en een beweegbare zekerlus',
+        'Een initiatiegordel heeft één gekleurde lus voor zowel inbinden als zekeren; een sportklimgordel heeft een gecombineerd inbindpunt met twee inbindlussen verbonden door een beweegbare zekerlus',
         'Een sportklimgordel heeft geen beenlussen',
         'Een initiatiegordel is altijd volledig verstelbaar',
         'Er is geen verschil, enkel de kleur verschilt',
       ],
       juist: 0,
       uitleg:
-        'Bij een initiatiegordel bind je in (direct en indirect) en zeker je aan één en dezelfde gekleurde lus. Een sportklimgordel heeft een gecombineerd inbindpunt: beenlus, heuplus en een beweegbare zekerlus.',
+        'Bij een initiatiegordel bind je in (direct en indirect) en zeker je aan één en dezelfde gekleurde lus. Een sportklimgordel heeft een gecombineerd inbindpunt: twee inbindlussen (onder en boven) verbonden door een beweegbare zekerlus.',
     },
     {
       id: 'k1-q8',
@@ -528,7 +528,7 @@ export const kvb1: LevelContent = {
       thema: 'Gordels',
       voorkant: 'Initiatie- vs sportklimgordel',
       achterkant:
-        'Initiatiegordel: één gekleurde lus voor inbinden (direct en indirect) en zekeren. Sportklimgordel: gecombineerd inbindpunt met beenlus, heuplus en beweegbare zekerlus.',
+        'Initiatiegordel: één gekleurde lus voor inbinden (direct en indirect) en zekeren. Sportklimgordel: gecombineerd inbindpunt met twee inbindlussen (onder en boven) en een beweegbare zekerlus.',
     },
     {
       id: 'k1-f7',
