@@ -11,6 +11,7 @@ import { vorigeNiveaus } from '../data';
 import { KNOPEN } from '../data/knopen';
 import { groepVoor, groepenIn } from '../themas';
 import { iconVoorThema } from '../themaIcon';
+import { accentVoorModus } from '../theme';
 import { ExamChecklist } from './ExamChecklist';
 import { Footer } from './Footer';
 
@@ -18,6 +19,7 @@ type LevelTab = 'info' | 'examen' | 'oefenen';
 
 interface Props {
   level: LevelContent;
+  donker: boolean;
   tab: LevelTab;
   onTab: (tab: LevelTab) => void;
   onTerug: () => void;
@@ -25,8 +27,8 @@ interface Props {
   onKnoop: (id: string) => void;
 }
 
-export function LevelPage({ level, tab, onTab, onTerug, onStart, onKnoop }: Props) {
-  const accent = level.accent ?? '#6c6253';
+export function LevelPage({ level, donker, tab, onTab, onTerug, onStart, onKnoop }: Props) {
+  const accent = accentVoorModus(level.accent ?? '#6c6253', donker);
 
   const tabs: { id: LevelTab; label: string }[] = [
     { id: 'info', label: 'Info' },
@@ -45,7 +47,7 @@ export function LevelPage({ level, tab, onTab, onTerug, onStart, onKnoop }: Prop
             type="button"
             onClick={onTerug}
             aria-label="Terug naar startscherm"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm active:scale-95"
           >
             <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -143,7 +145,7 @@ function InfoTab({
             <LinkIcon className="h-4 w-4" aria-hidden="true" />
             Knopen voor dit niveau
           </h2>
-          <div className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70">
+          <div className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70">
             {knopen.map((k, i) => (
               <button
                 key={k.id}
@@ -210,7 +212,7 @@ function PracticeTab({
   return (
     <div className="flex flex-col gap-5 px-5 py-5">
       {vorigeBeschikbaar && (
-        <label className="flex items-center justify-between gap-3 rounded-2xl border border-sand-300 bg-white/70 p-4">
+        <label className="flex items-center justify-between gap-3 rounded-2xl border border-sand-300 bg-surface/70 p-4">
           <span className="flex-1">
             <span className="block font-medium text-bark-800">Vorige niveaus meenemen</span>
             <span className="block text-sm text-bark-600">
@@ -294,7 +296,7 @@ function PracticeTab({
           type="button"
           disabled={kaartCount === 0}
           onClick={() => onStart('flashcards', actief, vorige)}
-          className="flex items-center gap-4 rounded-2xl border-2 bg-white p-5 text-left shadow-sm transition active:scale-[0.99] disabled:opacity-50"
+          className="flex items-center gap-4 rounded-2xl border-2 bg-surface p-5 text-left shadow-sm transition active:scale-[0.99] disabled:opacity-50"
           style={{ borderColor: accent, color: accent }}
         >
           <RectangleStackIcon className="h-8 w-8 shrink-0" />

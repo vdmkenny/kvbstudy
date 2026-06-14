@@ -4,21 +4,45 @@ import {
   LinkIcon,
   BookOpenIcon,
   WrenchScrewdriverIcon,
+  SunIcon,
+  MoonIcon,
 } from '@heroicons/react/20/solid';
 import type { LevelId } from '../types';
 import { LEVELS } from '../data';
 import { Footer } from './Footer';
+import { InstallHint } from './InstallHint';
 
 interface Props {
   onNiveau: (id: LevelId) => void;
   onKnopen: () => void;
   onWoordenlijst: () => void;
   onMateriaal: () => void;
+  donker: boolean;
+  onToggleTheme: () => void;
 }
 
-export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props) {
+export function Home({
+  onNiveau,
+  onKnopen,
+  onWoordenlijst,
+  onMateriaal,
+  donker,
+  onToggleTheme,
+}: Props) {
   return (
-    <div className="fade-in flex min-h-full flex-col">
+    <div className="fade-in relative flex min-h-full flex-col">
+      <button
+        type="button"
+        onClick={onToggleTheme}
+        aria-label={donker ? 'Schakel naar lichte modus' : 'Schakel naar donkere modus'}
+        className="press absolute right-4 top-6 flex h-10 w-10 items-center justify-center rounded-full border border-sand-300 bg-surface/70 text-bark-700 shadow-sm"
+      >
+        {donker ? (
+          <SunIcon className="h-5 w-5" aria-hidden="true" />
+        ) : (
+          <MoonIcon className="h-5 w-5" aria-hidden="true" />
+        )}
+      </button>
       <header className="px-5 pb-2 pt-8 text-center">
         <svg
           viewBox="0 0 64 64"
@@ -55,7 +79,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
               disabled={disabled}
               onClick={() => onNiveau(level.id)}
               className={[
-                'flex items-stretch gap-3 overflow-hidden rounded-2xl border bg-white/70 text-left transition',
+                'flex items-stretch gap-3 overflow-hidden rounded-2xl border bg-surface/70 text-left transition',
                 disabled
                   ? 'cursor-not-allowed border-sand-200 opacity-60'
                   : 'border-sand-300 shadow-sm active:scale-[0.99] hover:border-bark-500/50',
@@ -103,7 +127,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
           <button
             type="button"
             onClick={onKnopen}
-            className="flex items-center gap-3 rounded-2xl border border-sand-300 bg-white/70 p-4 text-left shadow-sm transition active:scale-[0.99]"
+            className="flex items-center gap-3 rounded-2xl border border-sand-300 bg-surface/70 p-4 text-left shadow-sm transition active:scale-[0.99]"
           >
             <span
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
@@ -121,7 +145,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
           <button
             type="button"
             onClick={onWoordenlijst}
-            className="flex items-center gap-3 rounded-2xl border border-sand-300 bg-white/70 p-4 text-left shadow-sm transition active:scale-[0.99]"
+            className="flex items-center gap-3 rounded-2xl border border-sand-300 bg-surface/70 p-4 text-left shadow-sm transition active:scale-[0.99]"
           >
             <span
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
@@ -139,7 +163,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
           <button
             type="button"
             onClick={onMateriaal}
-            className="press flex items-center gap-3 rounded-2xl border border-sand-300 bg-white/70 p-4 text-left shadow-sm"
+            className="press flex items-center gap-3 rounded-2xl border border-sand-300 bg-surface/70 p-4 text-left shadow-sm"
           >
             <span
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
@@ -156,6 +180,7 @@ export function Home({ onNiveau, onKnopen, onWoordenlijst, onMateriaal }: Props)
         </div>
       </div>
 
+      <InstallHint />
       <Footer />
     </div>
   );

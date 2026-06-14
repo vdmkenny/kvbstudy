@@ -75,7 +75,7 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
           type="button"
           onClick={onTerug}
           aria-label="Terug"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm active:scale-95"
         >
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
@@ -85,7 +85,7 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
         <button
           type="button"
           onClick={schud}
-          className="flex items-center gap-1.5 rounded-full bg-white/70 px-3 py-1.5 text-xs font-medium text-bark-700 shadow-sm active:scale-95"
+          className="flex items-center gap-1.5 rounded-full bg-surface/70 px-3 py-1.5 text-xs font-medium text-bark-700 shadow-sm active:scale-95"
         >
           <ArrowPathIcon className="h-4 w-4" />
           Schudden
@@ -103,7 +103,7 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
           {/* Voorkant */}
           <div
             aria-hidden={omgedraaid}
-            className="flip-face absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-sand-300 bg-white p-6 text-center shadow-sm"
+            className="flip-face absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-sand-300 bg-surface p-6 text-center shadow-sm"
           >
             <span
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"
@@ -143,7 +143,7 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
           type="button"
           onClick={() => ga(-1)}
           aria-label="Vorige"
-          className="flex items-center gap-1.5 rounded-xl border border-sand-300 bg-white px-4 py-3 font-medium text-bark-700 active:scale-95"
+          className="flex items-center gap-1.5 rounded-xl border border-sand-300 bg-surface px-4 py-3 font-medium text-bark-700 active:scale-95"
         >
           <ArrowLeftCircleIcon className="h-5 w-5" />
           Vorige

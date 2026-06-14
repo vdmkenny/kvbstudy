@@ -34,7 +34,7 @@ export function KnotGuide({ openId, onTerug }: Props) {
           type="button"
           onClick={onTerug}
           aria-label="Terug"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm active:scale-95"
         >
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
@@ -59,7 +59,7 @@ export function KnotGuide({ openId, onTerug }: Props) {
                 return (
                   <div
                     key={knoop.id}
-                    className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70"
+                    className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70"
                   >
                     <button
                       type="button"

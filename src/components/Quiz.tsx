@@ -133,7 +133,7 @@ export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }
               Foute vragen ({fouten.length})
             </h3>
             {fouten.map((f, i) => (
-              <div key={i} className="rounded-xl border border-sand-300 bg-white/70 p-4 text-left">
+              <div key={i} className="rounded-xl border border-sand-300 bg-surface/70 p-4 text-left">
                 <p className="font-medium text-bark-800">{f.vraag}</p>
                 <p className="mt-2 flex gap-2 text-sm">
                   <XMarkIcon className="h-5 w-5 shrink-0 text-clay-600" aria-hidden="true" />
@@ -165,7 +165,7 @@ export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }
           <button
             type="button"
             onClick={onTerug}
-            className="rounded-xl border border-sand-300 bg-white px-5 py-3 font-semibold text-bark-700 active:scale-[0.99]"
+            className="rounded-xl border border-sand-300 bg-surface px-5 py-3 font-semibold text-bark-700 active:scale-[0.99]"
           >
             Terug
           </button>
@@ -181,7 +181,7 @@ export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }
           type="button"
           onClick={onTerug}
           aria-label="Terug"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm active:scale-95"
         >
           <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -249,8 +249,8 @@ export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }
                   : toonFout
                     ? 'border-clay-500 bg-clay-500/10 text-bark-800'
                     : gekozen !== null
-                      ? 'border-sand-200 bg-white/40 text-bark-500'
-                      : 'border-sand-300 bg-white/80 text-bark-800 active:scale-[0.99]',
+                      ? 'border-sand-200 bg-surface/40 text-bark-500'
+                      : 'border-sand-300 bg-surface/80 text-bark-800 active:scale-[0.99]',
               ].join(' ')}
             >
               <span className="flex items-center gap-3">
@@ -278,7 +278,7 @@ export function Quiz({ vragen: alle, groepen, accent, titel, toonBron, onTerug }
         <div
           role="status"
           aria-live="polite"
-          className="mt-4 rounded-xl border border-sand-300 bg-white/70 p-4 text-sm leading-relaxed text-bark-700"
+          className="mt-4 rounded-xl border border-sand-300 bg-surface/70 p-4 text-sm leading-relaxed text-bark-700"
         >
           <TekstMetBegrippen text={vraag.uitleg} accent={accent} />
         </div>

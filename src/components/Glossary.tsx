@@ -31,7 +31,7 @@ export function Glossary({ onTerug }: Props) {
           type="button"
           onClick={onTerug}
           aria-label="Terug"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm active:scale-95"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm active:scale-95"
         >
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
@@ -42,7 +42,7 @@ export function Glossary({ onTerug }: Props) {
       </header>
 
       <div className="px-5 pb-4">
-        <div className="flex items-center gap-2 rounded-xl border border-sand-300 bg-white px-3 py-2.5">
+        <div className="flex items-center gap-2 rounded-xl border border-sand-300 bg-surface px-3 py-2.5">
           <MagnifyingGlassIcon className="h-5 w-5 shrink-0 text-bark-500" aria-hidden="true" />
           <input
             type="search"
@@ -63,7 +63,7 @@ export function Glossary({ onTerug }: Props) {
               <CategorieIcoon cat={cat} />
               {cat}
             </h2>
-            <div className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70">
+            <div className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70">
               {gefilterd
                 .filter((t) => (t.categorie ?? 'Algemeen') === cat)
                 .map((t, i) => (

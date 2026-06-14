@@ -30,7 +30,7 @@ export function MateriaalGuide({ onTerug }: Props) {
     return (
       <div
         key={item.id}
-        className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70"
+        className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70"
       >
         <button
           type="button"
@@ -93,7 +93,7 @@ export function MateriaalGuide({ onTerug }: Props) {
           type="button"
           onClick={onTerug}
           aria-label="Terug naar startscherm"
-          className="press flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-bark-700 shadow-sm"
+          className="press flex h-9 w-9 items-center justify-center rounded-full bg-surface/70 text-bark-700 shadow-sm"
         >
           <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>

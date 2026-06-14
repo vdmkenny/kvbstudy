@@ -195,7 +195,7 @@ function TheorieKaart({
   onOnthul: (k: string) => void;
 }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70">
+    <div className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70">
       <GroepKop titel={groep.titel} />
       <ul>
         {groep.items.map((item, i) => {
@@ -265,7 +265,7 @@ function PraktijkKaart({
   onToggle: (k: string) => void;
 }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-sand-300 bg-white/70">
+    <div className="overflow-hidden rounded-2xl border border-sand-300 bg-surface/70">
       <GroepKop titel={groep.titel} />
       <ul>
         {groep.items.map((item, i) => {

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { LevelId, StudieModus } from './types';
 import { getLevel, vorigeNiveaus } from './data';
+import { accentVoorModus, getInitialTheme } from './theme';
 import { Home } from './components/Home';
 import { LevelPage } from './components/LevelPage';
 import { Quiz } from './components/Quiz';
@@ -60,6 +61,17 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0 });
   }, [view]);
 
+  // Licht/donker thema.
+  const [donker, setDonker] = useState<boolean>(getInitialTheme);
+  useEffect(() => {
+    document.documentElement.dataset.theme = donker ? 'dark' : 'light';
+    try {
+      localStorage.setItem('kvb-theme', donker ? 'dark' : 'light');
+    } catch {
+      // negeren
+    }
+  }, [donker]);
+
   const level = 'id' in view ? getLevel(view.id) : undefined;
 
   const oefenData = useMemo(() => {
@@ -79,12 +91,15 @@ export default function App() {
           onKnopen={() => setView({ naam: 'knopen' })}
           onWoordenlijst={() => setView({ naam: 'woordenlijst' })}
           onMateriaal={() => setView({ naam: 'materiaal' })}
+          donker={donker}
+          onToggleTheme={() => setDonker((d) => !d)}
         />
       )}
 
       {view.naam === 'niveau' && level && (
         <LevelPage
           level={level}
+          donker={donker}
           tab={view.tab}
           onTab={(tab) => setView({ naam: 'niveau', id: view.id, tab })}
           onTerug={() => setView({ naam: 'home' })}
@@ -99,7 +114,7 @@ export default function App() {
         <Quiz
           vragen={oefenData.vragen}
           groepen={view.groepen ?? []}
-          accent={level.accent ?? '#9a4f31'}
+          accent={accentVoorModus(level.accent ?? '#9a4f31', donker)}
           titel={level.naam}
           toonBron={view.vorige}
           onTerug={() => setView({ naam: 'niveau', id: view.id, tab: 'oefenen' })}
@@ -110,7 +125,7 @@ export default function App() {
         <Flashcards
           kaarten={oefenData.kaarten}
           groepen={view.groepen ?? []}
-          accent={level.accent ?? '#9a4f31'}
+          accent={accentVoorModus(level.accent ?? '#9a4f31', donker)}
           titel={level.naam}
           onTerug={() => setView({ naam: 'niveau', id: view.id, tab: 'oefenen' })}
         />

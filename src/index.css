@@ -6,6 +6,7 @@
 
   /* Lichte, aardse kleuren */
   --color-parchment: #f4eee1;
+  --color-surface: #ffffff;
   --color-sand-100: #efe6d4;
   --color-sand-200: #e7dabf;
   --color-sand-300: #d8c6a6;
@@ -17,6 +18,24 @@
   --color-bark-600: #6c6253;
   --color-bark-700: #534a3d;
   --color-bark-800: #3a332a;
+}
+
+/* Donkere, aardse variant */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-parchment: #1d1813;
+  --color-surface: #2a241e;
+  --color-sand-100: #2e2820;
+  --color-sand-200: #393227;
+  --color-sand-300: #463c2f;
+  --color-clay-500: #c06a45;
+  --color-clay-600: #a85636;
+  --color-moss-500: #8a9560;
+  --color-moss-600: #717c4a;
+  --color-bark-500: #9a8d79;
+  --color-bark-600: #b6ab98;
+  --color-bark-700: #d4c9b6;
+  --color-bark-800: #ece3d3;
 }
 
 @layer base {

@@ -9,6 +9,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>KVB Studie</title>
+    <script>
+      // Pas het thema toe voor de eerste paint (geen flits).
+      try {
+        var t = localStorage.getItem('kvb-theme');
+        if (t !== 'dark' && t !== 'light')
+          t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
