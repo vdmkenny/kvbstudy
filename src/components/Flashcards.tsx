@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   ArrowLeftIcon,
   ArrowLeftCircleIcon,
@@ -9,6 +9,7 @@ import type { Flashcard } from '../types';
 import { shuffle } from '../utils';
 import { iconVoorThema } from '../themaIcon';
 import { groepVoor } from '../themas';
+import { TekstMetBegrippen } from './Begrippen';
 
 interface Props {
   kaarten: Flashcard[];
@@ -47,6 +48,26 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
     setOmgedraaid(false);
   }
 
+  // Toetsenbord: links/rechts bladeren, spatie draait de kaart om.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        ga(-1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        ga(1);
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        if (e.target instanceof HTMLButtonElement) return; // knoppen reageren zelf
+        e.preventDefault();
+        setOmgedraaid((v) => !v);
+      }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [kaarten.length]);
+
   return (
     <div className="fade-in flex flex-1 flex-col px-5 py-6">
       <header className="mb-4 flex items-center gap-3">
@@ -71,11 +92,12 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
         </button>
       </header>
 
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setOmgedraaid((v) => !v)}
         aria-pressed={omgedraaid}
-        className="flip-card relative flex-1"
+        className="flip-card relative flex-1 cursor-pointer outline-none"
       >
         <div className={`flip-inner absolute inset-0 ${omgedraaid ? 'is-flipped' : ''}`}>
           {/* Voorkant */}
@@ -109,10 +131,12 @@ export function Flashcards({ kaarten: alle, groepen, accent, titel, onTerug }: P
               <ThemaIcon className="h-3.5 w-3.5" aria-hidden="true" />
               {kaart.thema}
             </span>
-            <p className="text-base leading-relaxed text-bark-800">{kaart.achterkant}</p>
+            <p className="text-base leading-relaxed text-bark-800">
+              <TekstMetBegrippen text={kaart.achterkant} accent={accent} />
+            </p>
           </div>
         </div>
-      </button>
+      </div>
 
       <div className="mt-6 flex items-center justify-between">
         <button

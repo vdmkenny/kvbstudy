@@ -113,6 +113,15 @@ export function ExamChecklist({ examen, accent, levelId, geenExamen }: Props) {
         <span className="text-sm font-medium text-bark-600">
           {klaar}/{totaal}
         </span>
+        {klaar > 0 && (
+          <button
+            type="button"
+            onClick={() => setGevinkt(new Set())}
+            className="text-xs font-medium text-bark-500 underline"
+          >
+            Wissen
+          </button>
+        )}
       </div>
 
       {/* Theorie */}
