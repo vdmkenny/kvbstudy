@@ -55,13 +55,23 @@ export const MATERIAAL: MateriaalItem[] = [
     kvb: 'kvb1',
   },
   {
-    id: 'hms-safebiner',
-    naam: 'HMS-musketon / safebiner',
+    id: 'hms-musketon',
+    naam: 'HMS-musketon',
     synoniemen: ['peervormige musketon', 'mousqueton HMS', 'mousqueton poire'],
     categorie: 'Musketons',
     beschrijving:
-      'Peervormige musketon (Halbe Mastwurf Sicherung) om mee te zekeren, ook met een halve mastworp. Een safebiner is de extra beveiligde triple-lock variant (Ball-lock of Belay Master).',
-    voorbeelden: ['Petzl Attache', 'Black Diamond RockLock', 'Petzl Am’D Ball-lock', 'DMM Belay Master'],
+      'Peervormige musketon (Halbe Mastwurf Sicherung). De brede kant met minder scherpe hoek laat toe om met een halve mastworp te zekeren. Gemarkeerd met een H in een cirkel.',
+    voorbeelden: ['Petzl Attache', 'Black Diamond RockLock', 'Edelrid HMS Strike'],
+    kvb: 'kvb1',
+  },
+  {
+    id: 'safebiner',
+    naam: 'Safebiner',
+    synoniemen: ['triple-lock musketon'],
+    categorie: 'Musketons',
+    beschrijving:
+      'Een extra beveiligde musketon die met drie handelingen opent (triple-lock), zodat de kans op ongewild opengaan extreem klein is. Enkel de Ball-lock en de Belay Master worden aanvaard als echte safebiner om mee te zekeren en indirect in te binden.',
+    voorbeelden: ['Petzl Am’D Ball-lock', 'Petzl Sm’D Ball-lock', 'DMM Belay Master'],
     kvb: 'kvb1',
   },
 
