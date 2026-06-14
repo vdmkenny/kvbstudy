@@ -434,4 +434,10 @@ export const WOORDENLIJST: Term[] = [
     uitleg:
       'Lus aan de zijkant van de gordel om materiaal aan te hangen (Frans: porte-matériel). Draagt slechts circa 5 kg: nooit om in te zekeren of in te binden.',
   },
+  {
+    term: 'À la Hollandaise',
+    categorie: 'Techniek',
+    uitleg:
+      'Oefenmethode op een singlepitch waarbij beide klimmers tot aan de relais klimmen en daarna terug afdalen (rappellen). Een handige manier om het rappellen te oefenen.',
+  },
 ];
