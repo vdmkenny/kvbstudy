@@ -17,6 +17,8 @@ interface Diagram {
   src: string;
   /** false = lijntekening op lichte achtergrond, true = foto (vult de kader) */
   foto?: boolean;
+  /** optionele toelichting onder de afbeelding */
+  noot?: string;
   auteur: string;
   licentie: string;
   href: string;
@@ -59,9 +61,10 @@ const DIAGRAMS: Record<string, Diagram> = {
   paalsteek: {
     src: bowlineSrc,
     foto: true,
-    auteur: 'Markus Bärlocher',
-    licentie: 'Publiek domein',
-    href: 'https://commons.wikimedia.org/wiki/File:Palstek_innen.jpg',
+    noot: 'Foto toont de dubbele paalsteek. Bij het inbinden gaat het uiteinde door beide inbindpunten en werk je af met een overhandse knoop.',
+    auteur: 'Frencheigh',
+    licentie: 'CC BY-SA 3.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Doublebowline.jpg',
   },
   stopknoop: {
     src: stopperSrc,
@@ -105,17 +108,22 @@ export function KnotDiagram({ id, naam }: { id: string; naam: string }) {
   return (
     <figure className="mb-3 overflow-hidden rounded-xl border border-sand-300">
       <div
-        className={d.foto ? '' : 'flex items-center justify-center p-3'}
-        style={d.foto ? undefined : { backgroundColor: '#f4eee1' }}
+        className="flex items-center justify-center"
+        style={{ backgroundColor: '#f4eee1' }}
       >
         <img
           src={d.src}
           alt={`Diagram van de ${naam}`}
-          className={d.foto ? 'block w-full' : 'block w-full max-w-[320px]'}
+          className={
+            d.foto
+              ? 'block max-h-80 w-auto max-w-full object-contain'
+              : 'block w-full max-w-[320px] p-3'
+          }
           loading="lazy"
         />
       </div>
       <figcaption className="bg-sand-100 px-3 py-2 text-center text-[11px] text-bark-500">
+        {d.noot && <span className="mb-1 block text-bark-600">{d.noot}</span>}
         Bron:{' '}
         <a
           href={d.href}
