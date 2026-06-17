@@ -6,6 +6,7 @@ const VT = {
   stopknoop: 'https://www.youtube.com/watch?v=w9p6EbkjnJ8',
   mastworp: 'https://www.youtube.com/watch?v=w9p6EbkjnJ8',
   halveMastworp: 'https://www.youtube.com/watch?v=hZWwyIEJ3J4',
+  alpieneSlipsteek: 'https://www.youtube.com/watch?v=_LmmG7ePX4k',
 };
 
 /** Animated Knots: een geanimeerde demonstratie per knoop. */
@@ -138,7 +139,7 @@ export const KNOPEN: Knoop[] = [
       'Losmaken: haal de musketon weg, maak de overhandse knoop los en laat de slipsteek lopen terwijl je het remtouw weer vasthoudt.',
     ],
     kvb: ['kvb3'],
-    videos: videos(AK.munterMule),
+    videos: videos(AK.munterMule, VT.alpieneSlipsteek),
   },
   {
     id: 'machard',
